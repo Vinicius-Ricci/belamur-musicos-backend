@@ -87,7 +87,7 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async(req, res) => {
     const id = req.params.id
 
-    const musician = await Recipe.findOne({ _id: id })
+    const musician = await Musician.findOne({ _id: id })
 
         if (!musician) {
             res.status(422).json({ message: 'Musico não existe!' })
