@@ -14,14 +14,9 @@ app.use(
 app.use(express.json())
 
 //Endpoints
-const personRoutes = require('./Routes/personRoutes')
+const recipeRoutes = require('./Routes/recipeRoutes')
 
-app.use('/person', personRoutes)
-
-// Endpoint inicial
-app.get('/', (req, res) => {
-    res.json({ message: 'Oi Express!' })
-})
+app.use('/recipe', recipeRoutes)
 
 // Entregar uma porta
 const DB_USER = process.env.DB_USER
