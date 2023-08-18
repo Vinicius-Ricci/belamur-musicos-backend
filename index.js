@@ -14,16 +14,16 @@ app.use(
 app.use(express.json())
 
 //Endpoints
-const recipeRoutes = require('./Routes/recipeRoutes')
+const musicianRoutes = require('./Routes/musicianRoutes')
 
-app.use('/recipe', recipeRoutes)
+app.use('/musician', musicianRoutes)
 
 // Entregar uma porta
 const DB_USER = process.env.DB_USER
 const DB_PASSWORD = encodeURIComponent(process.env.DB_PASSWORD)
 
 mongoose.connect(
-    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.mmisdfc.mongodb.net/chefevirtualdatabase?retryWrites=true&w=majority`,
+    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@belamurcluster.qtnhsin.mongodb.net/belamurdatabase?retryWrites=true&w=majority`,
 )
     .then(() => {
         console.log('Conectamos ao MongoDB')
